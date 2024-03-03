@@ -1,0 +1,8 @@
+pre requisites
+---------------
+1-eksctl
+2-kubectl
+3-iamroles
+ |-SSM full access
+ |-eks access
+ |-ecs access
