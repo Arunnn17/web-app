@@ -1,0 +1,18 @@
+##aws configure
+access key
+secret key
+
+## Create you ecr repo
+aws ecr create-repository --repository-name webapp --region ap-south-1
+
+##login to ecr
+aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin  <youraccount id>.dkr.ecr.ap-south-1.amazonaws.com
+
+##build
+docker build -t webapp .
+
+##tag
+docker tag webapp:latest  <youraccount id>.dkr.ecr.ap-south-1.amazonaws.com/webapp:latest
+
+##push
+docker push <youraccount id>.dkr.ecr.ap-south-1.amazonaws.com/webapp:latest
